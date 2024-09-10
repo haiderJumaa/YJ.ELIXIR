@@ -1,0 +1,386 @@
+:root {
+    --primary-color: rgb(135, 40, 179); /* اللون الذهبي */
+    --secondary-color: #333333; /* اللون الرمادي الداكن */
+    --background-color: #F2F2F2; /* اللون الرمادي الفاتح */
+    --text-color: #333333; /* اللون الرمادي الداكن للنصوص */
+    --highlight-color: rgb(0, 0, 0); /* اللون البنفسجي */
+    --accent-color: #C0C0C0; /* اللون الفضي */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+header {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.products {
+    padding: 20px;
+}
+
+.products .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product {
+    flex: 1;
+    min-width: 200px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product h3 {
+    margin: 10px;
+    font-size: 18px;
+    color: var(--highlight-color);
+}
+
+.product p {
+    margin: 10px;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.add-to-cart {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0 0 5px 5px;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: var(--highlight-color);
+}
+
+.cart {
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cart ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart ul li {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart ul li .price {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.cart .total {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.cart button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.cart button:hover {
+    background-color: var(--highlight-color);
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* إعدادات العرض التقديمي */
+.slideshow-container {
+    max-width: 1200px; /* زيادة العرض لجعله أكثر وضوحًا وفخامة */
+    height: 600px; /* ارتفاع مخصص لمظهر أكثر أناقة */
+    position: relative;
+    margin: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* إضافة ظل للشرائح لمظهر فاخر */
+    border-radius: 10px; /* زوايا مدورة لزيادة الجمال */
+    overflow: hidden; /* منع تجاوز المحتوى الحدود */
+}
+
+.slides {
+    display: none;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%; /* ملء العرض والارتفاع بالكامل */
+    object-fit: cover; /* ملء الصورة وتعديلها لتناسب الإطار */
+    border-radius: 10px; /* إضافة نفس الحدود المدورة للصور */
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4 }
+    to { opacity: 1 }
+}
+
+/* النقاط */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px; /* مساحة مناسبة بين النقاط */
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: var(--primary-color); /* استخدام لون الثيم لزيادة الفخامة */
+}
+
+/* تنسيق الشعار */
+.logo-image {
+    max-width: 150px;
+    height: auto;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 2s forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+.cart-total {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.cart-total span {
+    color: var(--primary-color);
+}
+.add-to-cart {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0 0 5px 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: var(--highlight-color);
+}
+
+.add-to-cart:active {
+    transform: scale(0.95);
+    background-color: var(--highlight-color);
+}
+@media (max-width: 300px) {
+    .products .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+.news-ticker {
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.news-ticker div {
+    display: inline-block;
+    padding-right: 100%;
+    animation: ticker-right 30s linear infinite;
+}
+
+@keyframes ticker-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+body {
+    font-family: 'Cairo', sans-serif;
+}
+.product {
+    flex: 1;
+    min-width: 200px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* إضافة هذه الخاصية */
+    padding-bottom: 60px; /* مساحة كافية للزر */
+}
+
+.add-to-cart {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0 0 5px 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute; /* تموضع الزر بشكل ثابت */
+    bottom: 0; /* تثبيت الزر في أسفل البوكس */
+    left: 0; /* لتغطية العرض الكامل */
+}
+
+.add-to-cart:hover {
+    background-color: var(--highlight-color);
+}
+
+.add-to-cart:active {
+    transform: scale(0.95);
+    background-color: var(--highlight-color);
+}
+#cart-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    display: flex; /* لجعل الصورة والنص في صف واحد */
+    align-items: center; /* لمحاذاة النص والصورة عمودياً */
+}
+
+#cart-button:hover {
+    background-color: #e68a00;
+}
+
+#cart-icon {
+    width: 24px; /* عرض الصورة */
+    height: 24px; /* ارتفاع الصورة */
+    margin-right: 10px; /* مسافة بين الصورة والنص */
+}
